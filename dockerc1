@@ -1,0 +1,8 @@
+ubu@ubu-VirtualBox:~$ sudo docker images
+ubu@ubu-VirtualBox:~$ sudo docker pull hello-world
+ubu@ubu-VirtualBox:~$ sudo docker run hello-world
+ubu@ubu-VirtualBox:~$ sudo docker run -p 80:80 nginx
+ubu@ubu-VirtualBox:~$ sudo docker run -p 80:80 -d nginx
+ubu@ubu-VirtualBox:~$ sudo docker ps
+ubu@ubu-VirtualBox:~$ sudo docker stop [conatinerId]
+

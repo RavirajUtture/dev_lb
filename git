@@ -1,0 +1,23 @@
+ubu@ubu-VirtualBox:~$ git --version
+ubu@ubu-VirtualBox:~$ git commit -m "first "
+ubu@ubu-VirtualBox:~$ git config --global user.email ""
+ubu@ubu-VirtualBox:~$ git config --global user.name ""
+
+--repo
+ubu@ubu-VirtualBox:~$ git remote -v
+ubu@ubu-VirtualBox:~$ git remote add origin []
+ubu@ubu-VirtualBox:~$ git remote -v
+ubu@ubu-VirtualBox:~$ git push origin master
+ubu@ubu-VirtualBox:~$ git fetch origin --latest changes 
+
+-- branch
+ubu@ubu-VirtualBox:~$ git branch
+ubu@ubu-VirtualBox:~$ git checkout test_branch
+ubu@ubu-VirtualBox:~$ git add app.py
+ubu@ubu-VirtualBox:~$ git commit -m "from test_branch"
+ubu@ubu-VirtualBox:~$ git push origin test_branch
+ubu@ubu-VirtualBox:~$ git checkout master
+ubu@ubu-VirtualBox:~$ git merge test_branch
+
+
+
