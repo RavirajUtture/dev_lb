@@ -9,7 +9,7 @@ ubu@ubu-VirtualBox:~$ minikube status
 ubu@ubu-VirtualBox:~$ kubectl get nodes
 
 --create
-ubu@ubu-VirtualBox:~$ kubectl run pod my-pod --image=nginx --restart=Never
+ubu@ubu-VirtualBox:~$ kubectl run my-pod --image=nginx --restart=Never
 ubu@ubu-VirtualBox:~$ kubectl get pod my-pod -o wide
 ubu@ubu-VirtualBox:~$ kubectl expose pod my-pod --type=NodePort --port=80 --name=my-service
 ubu@ubu-VirtualBox:~$ kubectl get service
