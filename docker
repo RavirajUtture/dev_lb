@@ -1,0 +1,39 @@
+--docker--
+T-1
+sudo docker network ls
+sudo apt-get install bridge-utils
+sudo docker run -dt ubuntu bash
+sudo docker run -dt ubuntu bash
+sudo docker inspect 5688063a4c90 (from bridge)
+
+sudo docker exec -it 7c3e38960e39a58b83ca84b9eb3bb9f30e728f6119e28b15ccb1d1baad7967ad bash
+apt-get update
+apt-get install iputils-ping
+
+T-2
+sudo docker exec -it d82cb9a36f341b83e9788a23cb7d5b226ae273c61c87203cf314cbf274107e46 bash
+apt-get update
+apt-get install iputils-ping
+
+--custom bridge--
+sudo docker network create custom_bridge
+sudo docker run -dt --network custom_bridge ubuntu bash
+sudo docker run -dt --network custom_bridge ubuntu bash
+sudo docker network inspect 14a8a998d3d7(custom_bridge)
+sudo docker exec -it 2605215f7cfe866ebda145eaa0fd bash
+apt-get update
+apt-get install iputils-ping
+
+T-2
+sudo docker exec -it 2605215f7cfe866ebda145eaa0fd bash
+apt-get update
+apt-get install iputils-ping
+
+---
+ping from custom_bridge c3 to bridge c1 
+100% packet loss
+
+--connecting bridge conatiner to custom container
+docker network connect custom_bridge c1_id
+docker network disconnect custom_bridge c1_id
+

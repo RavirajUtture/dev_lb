@@ -1,0 +1,33 @@
+--kubernetics--
+ubu@ubu-VirtualBox:~$ sudo systemctl restart docker
+ubu@ubu-VirtualBox:~$ sudo usermod -aG docker $USER
+ubu@ubu-VirtualBox:~$ newgrp docker
+ubu@ubu-VirtualBox:~$ sudo systemctl restart docker
+ubu@ubu-VirtualBox:~$ docker ps
+ubu@ubu-VirtualBox:~$ minikube start --driver=docker
+ubu@ubu-VirtualBox:~$ minikube status
+ubu@ubu-VirtualBox:~$ kubectl get nodes
+
+--create
+ubu@ubu-VirtualBox:~$ kubectl run pod my-pod --image=nginx --restart=Never
+ubu@ubu-VirtualBox:~$ kubectl get pod my-pod -o wide
+ubu@ubu-VirtualBox:~$ kubectl expose pod my-pod --type=NodePort --port=80 --name=my-service
+ubu@ubu-VirtualBox:~$ kubectl get service
+ubu@ubu-VirtualBox:~$ minikube service my-service --url
+ubu@ubu-VirtualBox:~$ kubectl delete service my-service
+ubu@ubu-VirtualBox:~$ kubectl delete pod my-pod
+
+--deployment
+ubu@ubu-VirtualBox:~$ kubectl create deployment my-deployment --image=nginx --replicas=2
+ubu@ubu-VirtualBox:~$ kubectl get pods
+ubu@ubu-VirtualBox:~$ kubectl get deployment 
+ubu@ubu-VirtualBox:~$ kubectl expose deployment my-deployment --type=NodePort --port=80
+ubu@ubu-VirtualBox:~$ minikube service my-deployment
+ubu@ubu-VirtualBox:~$ minikube service my-deployment --url
+--scale
+ubu@ubu-VirtualBox:~$ kubectl scale deployment my-deployment --replicas=5
+ubu@ubu-VirtualBox:~$ kubectl get pods
+ubu@ubu-VirtualBox:~$ kubectl delete pod [pod_id]
+ubu@ubu-VirtualBox:~$ kubectl get pods
+
+
