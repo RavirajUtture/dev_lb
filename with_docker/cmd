@@ -1,0 +1,9 @@
+sudo docker build -t myimage:1 .
+sudo docker images
+sudo docker run -p 8000:5000 myimage:1
+
+--push
+sudo docker tag myimage:1 ravirajutture/todays
+sudo docker login   
+sudo docker push  ravirajutture/todays
+
