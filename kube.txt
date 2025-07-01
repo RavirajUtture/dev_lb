@@ -31,3 +31,5 @@ ubu@ubu-VirtualBox:~$ kubectl delete pod [pod_id]
 ubu@ubu-VirtualBox:~$ kubectl get pods
 
 
+--test
+
